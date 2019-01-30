@@ -1,0 +1,51 @@
+<div class="row title">
+  <div class="col-md-12">
+    Github Search
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <input class="searchBox" #box (keyup.enter)="onEnter(box.value)">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 totalCount" *ngIf="repoList">
+    <p *ngIf="repoList.total_count > 0">{{ repoList?.total_count }} repository results</p>
+    <p *ngIf="repoList.total_count == 0">There is no records.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <hr />
+  </div>
+</div>
+<div *ngFor="let repo of repoList?.items | paginate: { itemsPerPage: 10, currentPage: page, totalItems:  getTotalCount(repoList?.total_count)}">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="fullName font-16px">
+        <a href="{{ repo.html_url }}" target="_blank">
+          {{ repo.full_name }}
+        </a>
+      </p>
+      <p class="description font-15px">{{ repo.description }}</p>
+      <p class="updatedDate font-14px"> Updated on {{ repo.updated_at | date:'MMM dd yyyy'}}</p>
+    </div>
+    <div class="col-md-2">
+      <span class="fa fa-circle font-15px">
+        {{ repo.language }}
+      </span>
+    </div>
+    <div class="col-md-2">
+      <span class="fa fa-star font-15px">
+        {{ repo.stargazers_count }}
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <hr />
+    </div>
+  </div>
+</div>
+<pagination-controls class="customPaging" (pageChange)="changePage($event)" maxSize="6" autoHide="true" directionLinks="true"
+  previousLabel="<" nextLabel=">"></pagination-controls>

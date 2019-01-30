@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+$fa-font-path: "./assets/fonts";
+@import '~font-awesome/scss/font-awesome';
+
+body
+{
+    color: #5A5A5A;
+}
+.row
+{
+    padding-left:20px;
+    padding-right:20px;
+    .searchBox
+    {
+        width:100%;
+        margin-top:20px;
+        margin-bottom:20px;
+        border-radius:5px;
+        border: solid 1px lightgray;
+        padding:5px;
+    }
+    p
+    {
+        margin-bottom: 5px;
+    }
+
+    .totalCount
+    {
+        font-weight: bold;
+        font-size:18px;
+    }
+    .fullName
+    {
+        color: #3D78FA;
+        font-weight: bold;
+        font-size:16px;
+    }
+
+    .description
+    {
+        font-size:15px;
+    }
+
+    .updatedDate
+    {
+        color:#838383;
+        margin-top:20px;
+        
+    }
+
+    
+    .font-14px
+    {
+        font-size:14px;
+    }
+
+    .font-15px
+    {
+        font-size:15px;
+    }
+
+    .font-16px
+    {
+        font-size:16px;
+    }
+
+    hr
+    {
+        border:1px solid #EEE;
+    }
+    &.title
+    {
+        background-color: aliceblue;
+        padding-bottom: 20px;
+        font-size:20px;
+    }
+}
+
+.customPaging
+{
+    .ngx-pagination
+    {
+        li
+        {
+            border:solid 1px lightgrey;
+            border-radius:5px;
+            margin:5px;
+        }
+
+        .pagination-previous 
+        {
+            a::before, &.disabled::before
+            {
+                display: none;
+            }
+        }
+
+        .pagination-next
+        {
+            a::after, &.disabled::after
+            {
+                display:none;
+            }
+        }
+        
+    }
+} 
+
