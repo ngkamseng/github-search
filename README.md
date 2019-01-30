@@ -3,7 +3,9 @@
 This project call github search api to retrieve the repository list based on input search query. Support pagination and up to 1000 records. Github api only support up to 1000 records.
 
 # Quick Start
-1. Run `ng install` to install all the dependencies.
+1. Install Nodejs.
+2. Run `npm install -g @angular/cli` to install angular cli.
+1. Run `npm install` to install all the dependencies.
 2. Run `ng serve -o` to start local server and open `http://localhost:4200/` automatically.
 
 ## Running unit tests
